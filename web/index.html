@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GradApps Editor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="toolbar">
+        <h1>GradApps</h1>
+        <span id="current-path" class="path">Select a file</span>
+        <span id="status" class="status">Ready</span>
+        <button type="button" id="btn-preview">Preview</button>
+        <button type="button" id="btn-split" class="active">Split</button>
+        <button type="button" id="btn-edit">Edit</button>
+        <button type="button" id="btn-save" class="primary">Save</button>
+      </header>
+
+      <div class="layout">
+        <aside class="sidebar">
+          <div class="sidebar-search">
+            <input id="search" type="search" placeholder="Search files…" autocomplete="off" />
+            <div class="tree-actions">
+              <button type="button" id="btn-expand">Expand all</button>
+              <button type="button" id="btn-collapse">Collapse all</button>
+            </div>
+          </div>
+          <nav id="file-tree" class="file-tree" aria-label="Project folders"></nav>
+        </aside>
+
+        <main id="workspace" class="workspace split">
+          <section class="pane editor-pane">
+            <div class="pane-label">Markdown</div>
+            <textarea id="editor" class="editor" spellcheck="true" placeholder="Select a file from the sidebar…"></textarea>
+          </section>
+          <section class="pane preview-pane">
+            <div class="pane-label">Preview</div>
+            <article id="preview" class="preview">
+              <div class="markdown-body"></div>
+            </article>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>

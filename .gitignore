@@ -1,0 +1,33 @@
+# Ignore personal / school-specific application data (kept locally only)
+applications/*/
+!applications/_template/
+!applications/_template/**
+
+schools.csv
+tracker.md
+README.local.md
+
+_shared/application-opens.json
+_shared/timeline.md
+_shared/recommenders.md
+_shared/applicant-profile.md
+
+# Local notify runtime + machine-specific LaunchAgent
+_shared/.notify-*
+scripts/com.jedwoods.gradapps.notify-opens.plist
+
+# Secrets / env
+.env
+.env.*
+*.pem
+credentials.json
+
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
+__pycache__/
+*.pyc
+.venv/
+venv/
